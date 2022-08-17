@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>physics verse</title>
+    
+    <style>
+    		
+        body{
+            display: flex;
+            /* align-items: center; */
+            flex-direction: column;
+            margin: 0px;  
+            background-color:#f2f2f2;            
+        }
+        
+        
+        
+        #heading{
+            color: #084763;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: monospace;
+            text-align: center; 
+            position:relative;
+            top :13px;
+            }
+    
+        #navbar{
+            display: flex;
+            justify-content: space-between;
+            /* width: auto; */
+            /* border: 2px solid rgb(124, 124, 124); */
+        }
+        .menu{
+            color: rgb(255, 255, 255);
+            height: 45px;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.753);
+            align-items: center;
+            /* width:min-content; */
+            /* border-radius: 20px; */
+
+        }   
+         #active{
+            background-color: rgba(26, 26, 26, 0);
+            color: white;
+            
+            
+        }
+    .menu:active{
+        transform: translateY(4px);
+ 
+    }
+        .menu:hover{
+            cursor:pointer;
+            background-color: rgb(255, 196, 0);
+            color: rgb(163, 92, 0);
+
+        }
+
+p{
+    padding: 14px;
+    color: rgba(255, 255, 255, 0.863); 
+    line-height: 40px;
+}
+#mybutton{
+    background-color:#15a1ff;
+    border: none;
+    box-shadow: none;
+    height:35px; 
+    width:40px;
+    color: white;
+    display: block;
+margin:0;
+border-radius: 0px 5px 5px 0; 
+ animation: a3 2s ease-in-out 0s 1 forwards;
+ position: relative ;
+top: 80px; box-shadow:inset -1px 1px 4px white; box-shadow:inset 0px -1px 10px white;   border:1px solid #14aaef;
+
+}
+
+
+#mybutton:hover{
+    background-color: rgb(64, 202, 0);
+}
+.searchbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+}
+
+#search{
+    /* margin-top: 55px; */
+    position: relative ;
+    top: 80px;        
+border:none;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  width: 70%;
+  height: 33px;
+  text-align: center;
+  box-shadow:inset 1px 1px 8px #a9a9a9;
+  animation: a2 2s ease-in-out 0s 1 forwards;
+
+
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.ham{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: none;
+}
+.line{
+    background-color: #084763;
+    width: 35px;
+    height: 4px;
+    border-radius: 10%;
+    margin: 5px;
+  
+}
+::placeholder{
+    color:rgba(0,0,0,0.5);
+}
+
+.vertical-menu{
+    height: 50px;
+padding: 0 5px;
+    position: absolute;
+    top: 0;
+    left:   -83%;
+    width: 80%;
+    background-color: white;
+    display: flex;
+ justify-content: center;
+ align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: 0px 0px 4px black;
+   
+    }
+.menu2{
+    color: #12526d;
+    text-decoration: none;
+}
+
+               
+        @keyframes a3 {
+    from
+    {background: none;
+        transform: translateY(0px);
+    }
+
+    to{
+        transform: translateY(-30px);
+    }
+}
+@keyframes a2 {
+    from
+    {background:rgba(0, 0, 0, 0);
+        transform: translateY(0px);
+    }
+
+    to{background: white;
+        transform: translateY(-30px);
+    }
+}
+
+@media (max-width:380px){
+    .menu{
+   display: none;
+        }  
+        #navbar{
+            display: none;
+        } 
+         .ham {
+            display: flex;
+            flex-direction: column;
+
+        }
+        .line{
+            display: inline;
+           
+        }
+        h2{
+            margin-top: 90px;
+       
+        }
+
+}
+
+#cards{
+    display: flex;
+    height:220px;
+    width: 100%;
+    flex-direction:column;    
+    flex-wrap: wrap;
+    position: absolute;
+    top:200px;
+    overflow: scroll;
+    /* border: 2px solid rgb(160, 160, 160); */
+}
+.flashcards
+{
+    width: 220px;
+    height:190px;
+
+    margin: 8px;
+    background-color:#dfffd5;
+    border-radius: 5px;
+    color: #004c01;
+    font-family: monospace;
+    text-align: center;
+    overflow: scroll;
+    padding-bottom:10px;
+    
+}
+
+i:hover{
+    color: rgb(0, 255, 21);
+}
+
+
+p{
+    font-size: 15px;
+    color: #252525;
+    line-height: 20px;
+    margin: 0;
+    text-align: left; 
+    
+    
+}
+
+
+
+#fixedbox{
+position: fixed;
+top :77%;
+left :96%;
+color:#b3b3b3;
+border: 1px solid #d3d3d3;
+background-color:white;
+border-radius: 5px 0 0 5px;
+height: 38px;
+width: 17px;
+display: flex;
+justify-content:center;
+align-items :center;
+}
+
+#logo{
+height:35px;
+width:auto;
+position : absolute;
+right:7px;
+top:7px;
+}
+.images{
+				max-width:100%;
+				height:auto;
+}
+.blue{
+color:#00c0ff;
+}
+.kagaz{
+				background-color:#15cbff;
+				font-weight:bold;
+				color:#074253;
+				width:220px;
+				height:35px;
+				border-radius:5px 5px 0 0;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+}
+img{
+max-width:220px;
+height:auto;
+
+}
+h2{
+	position: relative;
+	top:-7px;		
+	color:#545454;
+	padding:10px;
+	display:block;
+	background-color:none;
+	border:1px 0 solid #d7d7d7;
+}
+
+#equalizer{
+				height:200px;
+}  
+.leaf{
+				color:#545454;
+	padding:10px;
+	display:block;
+	background-color:none;
+	font-size:24px;
+	font-weight:bold;
+} 
+button{
+				width:50px;
+				border:none;
+		  	height:30px;		
+				background-color:white;
+				border-radius:20px;		
+				margin:7px;	
+				color: #002a63;
+			/*	border :1px solid black;*/
+			 }
+			 
+#handel{
+				background-color:#0a4a75;
+				color:#138fe2;
+				display:flex;
+				padding:10px;
+				justify-content:center;
+}			 
+	.a{
+					padding:7px 10px
+	} 
+	.sh{
+				position: absolute;
+				left: -380px;
+				top:450px;
+				background-color:#d5f4ff;
+				box-shadow:5px 0 5px #d9d9d9;
+				height:120px;
+				width:340px;
+				color:#0a4973;
+				
+	}
+	.clo{
+					position: relative;
+					top:-78px;
+					left:300px;
+					font-size:20px;
+					text-align:center;
+					display:none;
+					background-color:rgba(0,0,0,.2);
+					height:30px;
+					width:30px;
+					border-radius:50%;
+					color:white;
+	}
+	
+li
+{
+				margin:10px;
+}
+	ol{
+					border :1px solid #67441a;
+					margin:3px;
+					background-color: #ffdfd5;
+	}
+	
+	
+	
+	
+	
+	
+    </style>
+</head>
+<body>
+				
+				  <div id="heading">								
+         Physics <span class="blue">
+          				        			Verse	
+         </span>
+       </div>
+       
+       
+       
+       		
+				<div id = "fixedbox" onclick="hormenu()">
+							<i class="fas fa-chevron-left"></i>
+				</div>
+				
+				
+				
+    <div id="container">
+        <div id="navbar">
+            <a href="index.html" class="menu" id="active">Home</a>
+            <a href="book.html" class="menu">Books</a>
+            <a class="menu"  href="contact.html">Video</a>
+            <a class="menu"  href="test.html">Test</a>
+            <a class="menu"  href="formula.html">formula</a>
+            <a class="menu" href="about.html">About</a>
+        </div>
+         <div class="searchbox">
+
+           <input type="text" id="search" placeholder="enter topic name">
+           <button id="mybutton" onclick="mysearch()" >
+      <i class="fas fa-search"></i>          </button>       
+        </div>
+  <div class="ham" onclick="opennav()">
+<div class="line" id="lin1"></div>
+<div class="line" id="lin2"></div>
+<div class="line" id="lin3"></div>
+  </div>
+   </div>
+    <div class="vertical-menu">
+        <a href="index.html" class="menu2" id="symbol1"><i class="fas fa-home"></i></a>
+        <a href="ideas.html" class="menu2" id="symbol2"> <i class="far fa-lightbulb"></i> </a>
+        <a href="books.html" class="menu2" id="symbol3"><i class="fas fa-book"></i></a>
+        
+        <a href="" class="menu2" id="symbol5"><i class="far fa-play-circle"></i></a>
+        <a href="ask.html" class="menu2" id="symbol6"><i class="far fa-comment-alt"></i></a>
+   
+        <span class="menu2" id="symbol8" onclick="light()">     <i class="far fa-sun"></i></span>
+
+        <span class="menu2" id="symbol7" onclick="clos()"><i class="fas fa-chevron-left"></i></span>
+    </div>
+    
+    
+    
+    
+    
+    
+<h2>Short flash cards</h2>
+
+
+
+    <div id ="cards">
+    				<div class="flashcards" onclick="big(0)">
+        <div class="kagaz">
+        			Gravitation	
+        </div>
+        <img src="p.png" alt="error">
+            <p class="showing">
+                What Is Gravity?
+Gravity is the force by which a planet or other body draws objects toward its center. The force of gravity keeps all of the planets in orbit around the sun.
+
+            </p>
+        </div>
+        
+        
+        
+   
+        <div class="flashcards" onclick="big(1)">
+        				 <div class="kagaz">
+        		Optics
+        </div>   <img src="b.jpg" alt="error">
+               <p class="showing">
+                A branch of physics that studies electromagnetic radiation (for example, light and infrared radiation), its interactions with matter, and instruments used to gather information due to these interactions. Optics includes the study of sight.
+
+            </p>
+        </div>   
+
+       
+        <div class="flashcards" onclick="big(2)"> 				 <div class="kagaz">
+        		Electrostatics
+        </div>
+           <img src="c.jpeg" alt="error">
+                 <p class="showing">
+                In physics, electrostatics deals with the phenomena and properties of stationary or slow-moving electric charges. Electrostatic phenomena arise from the forces that electric charges exert on each other and are described by Coulomb's law.
+            </p>
+       
+ 
+        </div>
+        <div class="flashcards" onclick="big(3)">
+<div class="kagaz">
+        		Electromagnetic
+        </div>   <img src="d.jpg" alt="error">
+                 <p class="showing">
+
+                Every magnetic material has a magnetic field. Magnetic fields are created when the poles are all lined up in the same direction. This invisible field acts as the magnetic force that pushes and pulls on an object.
+            </p>
+
+        </div>
+        <div class="flashcards" onclick="big(4)">
+        				<div class="kagaz">
+        	Resistor
+        </div>    <img src="e.jpg" alt="error">           <p>
+                The main purpose of resistor is to reduce the current flow and to lower the voltage in any particular portion of the circuit.
+            </p>
+
+        </div> 
+        <div class="flashcards" onclick="big(5)">
+        				<div class="kagaz">
+        		Inductors
+        </div>     <img src="f.jpeg" alt="error">         <p>
+                An inductor is a passive electronic component that storesenergy in the form of a magnetic field. In its simplest form, an inductor consistsof a wire loop or coil. The inductance is directly proportional to the number ofturns in the coil.
+            </p>
+ 
+        </div>
+        <div class="flashcards" onclick="big(6)"><div class="kagaz">
+        		Capacitors
+        </div>    <img src="g.jpg" alt="error">
+            <p>
+                Capacitance is the ratio of the amount of electric charge stored on a conductor to a difference in electric potential. 
+            </p>
+
+        </div>
+        <div class="flashcards" onclick="big(7)">
+     <div class="kagaz">
+        		Electromagnetic induction
+        </div>  		   <img src="g.jpeg" alt="error">	
+            <p>
+                Electromagnetic or magnetic induction is the production of an electromotive force across an electrical conductor in a changing magnetic field.
+            </p>
+
+        </div>
+        <div class="flashcards" onclick="big(8)"><div class="kagaz">
+        		Magnetic field
+        </div>    <img src="h.jpeg" alt="error">
+            <p>
+                A magnetic field is a vector field that describes the magnetic influence on moving electric charges, electric currents, and magnetic materials.
+            </p>
+
+        </div>
+        <div class="flashcards" onclick="big(9)">
+<div class="kagaz">
+        		Electric field
+        </div>    <img src="i.png" alt="error">
+            <p>
+                An electric field (sometimes E-field ) is the physical field that surrounds electrically-charged particles and exerts force on all other charged particles in the field, either attracting or repelling them. 
+            </p>
+
+        </div>
+        <div class="flashcards" onclick="big(10)">
+<div class="kagaz">
+        		Permanent magnets
+        </div>    <img src="i.jpg" alt="error">
+            <p>
+                Permanent magnets are materials that retain their magnetic properties after having been exposed to a magnetic field. They are found in a great variety of materials used in a significant and increasing number of industrial and commercial applications.
+            </p>
+
+        </div>
+        <div class="flashcards" onclick="big(11)">
+<div class="kagaz">
+        		EM waves
+        </div>    <img src="j.jpg" alt="error">
+            <p>
+                EM waves are composed of oscillating magnetic and electric fields. Description: Electromagnetic waves are formed when an electric field comes in contact with a magnetic field. They are hence known as 'electromagnetic' waves.
+            </p>
+
+        </div>
+        <div class="flashcards" onclick="big(12)">
+<div class="kagaz">
+        		thermodynamics
+        </div>   <img src="k.png" alt="error">
+            <p>
+                Thermodynamics is that branch of physics which deals with temperature and heat and their relation to work and energy. The laws of thermodynamics govern the behavior of these quantities irrespective of the specific properties of the system or material. 
+            </p>
+        </div>
+                <div class="flashcards" onclick="big(13)">
+<div class="kagaz">
+        		Alternating currents
+        </div>    <img src="l.webp" alt="error">
+            <p>
+          Alternating current (AC) is an electric current which periodically reverses direction and changes its magnitude continuously with time in contrast to direct current (DC) which flows only in one direction.
+            </p>
+        </div>
+  <img src="construction.png" alt="error">  
+    </div>   
+<div id="equalizer"></div> 
+     <div class="leaf">Select class</div>
+    <div class="classroom">
+    
+    	<button onclick="op(0)">
+     				1st
+     </button>
+      <button onclick="op(1)">
+     				2nd
+     </button>
+       <button onclick="op(2)">
+     				3rd
+     </button>
+     <button onclick="op(3)">
+     				4th
+     </button >
+      <button onclick="op(4)">
+     				5th
+     </button>
+     	<button onclick="op(5)">
+     				6th
+     </button>
+      <button onclick="op(6)">
+     			7th
+     </button>
+       <button onclick="op(7)">
+     				8th
+     </button>
+     <button onclick="op(8)">
+     				9th
+     </button >
+      <button onclick="op(9)">
+     				10th
+     	</button>
+      <button onclick="op(10)">
+     				11th
+     </button>
+       <button onclick="op(11)">
+     				12th
+     </button>
+     <button onclick="op(12)">
+     				12th+
+     </button >
+    
+     
+     </div>
+     
+            <p class="sh" >
+       Class 1st physics topics<button class ="clo" onclick="cl(0)">
+ 				<i class="fas fa-chevron-left"></i>
+ </button> 
+            <p class="sh" >
+                Class 2nd physics topics<button class ="clo" onclick="cl(1)">
+ 			<i class="fas fa-chevron-left"></i>
+ </button> 
+            </p>
+
+<p class="sh" >
+               Class 3rd physics topics<button class ="clo" onclick="cl(2)">
+ 				<i class="fas fa-chevron-left"></i>
+ </button> 
+            </p>
+                 <p class="sh" >
+             Class 4th physics topics<button class ="clo" onclick="cl(3)">
+ 				<i class="fas fa-chevron-left"></i>
+ </button> 
+            </p>
+            <p class="sh" >
+          Class 5th physics <button class ="clo" onclick="cl(4)">
+ 					<i class="fas fa-chevron-left"></i>
+ 				 				 </button> 
+            </p>
+
+<p class="sh" >
+          Class 6th physics topics<button class ="clo" onclick="cl(5)">
+ 					<i class="fas fa-chevron-left"></i>
+ </button> 
+            </p>
+     
+            <p class="sh" >
+                Class 7th physics topics<button class ="clo" onclick="cl(6)">
+ 	<i class="fas fa-chevron-left"></i>
+ </button> 
+
+            </p>
+
+<p class="sh" >
+               Class 8th physics topics<button class ="clo" onclick="cl(7)">
+ 					<i class="fas fa-chevron-left"></i>
+ </button> 
+            </p>
+          
+            <p class="sh" >
+          Class 9th physics topics<button class ="clo" onclick="cl(8)">
+ 			<i class="fas fa-chevron-left"></i>
+ </button> 
+            </p>
+
+<p class="sh" >
+            Class 10th physics topics<button class ="clo" onclick="cl(9)">
+ 					<i class="fas fa-chevron-left"></i>
+ </button> 
+
+            </p>   
+            <p class="sh" >
+              Class 11th physics topics<button class ="clo" onclick="cl(10)">
+ 					<i class="fas fa-chevron-left"></i>
+ </button> 
+
+            </p>
+            <p class="sh" >
+                Class 12th physics topics<button class ="clo" onclick="cl(11)">
+ 					<i class="fas fa-chevron-left"></i>
+ </button> 
+
+            </p>
+
+<p class="sh" >
+               Class 12th+ physics topics<button class ="clo" onclick="cl(12)">
+ 				<i class="fas fa-chevron-left"></i>
+ </button> 
+
+            </p>      
+           
+            
+
+     <div class="leaf">Basic physics formula</div>
+				 <img src="r.jpg" alt="error" class="images">
+ 
+ 
+     <div class="leaf">Electrostatics</div>
+ <ol>
+ 				<li>force between two charges</li>
+ 				<li>permitivity</li>
+ 				<li>gauss law</li>
+ 				<li>electric field</li>
+ 				<li>electric field due to dipole</li>
+ 				<li>potential</li>
+ 				<li>potential differenc</li>
+ 				<li>work done by electric field</li>
+ 				<li>van de graff generator</li>
+ 				
+ </ol>
+ <div class="leaf">Optics</div>
+ <ol>
+ 				<li>force between two charges</li>
+ 				<li>permitivity</li>
+ 				<li>gauss law</li>
+ 				<li>electric field</li>
+ 				<li>electric field due to dipole</li>
+ 				<li>potential</li>
+ 				<li>potential differenc</li>
+ 				<li>work done by electric field</li>
+ 				<li>van de graff generator</li>
+ 				
+ </ol>
+ 
+ <div class="leaf">Gravitation</div>
+ <ol>
+ 				<li>force between two charges</li>
+ 				<li>permitivity</li>
+ 				<li>gauss law</li>
+ 				<li>electric field</li>
+ 				<li>electric field due to dipole</li>
+ 				<li>potential</li>
+ 				<li>potential differenc</li>
+ 				<li>work done by electric field</li>
+ 				<li>van de graff generator</li>
+ 				
+ </ol>
+ 
+ <div class="leaf">Electromagnetic waves</div>
+ <ol>
+ 				<li>force between two charges</li>
+ 				<li>permitivity</li>
+ 				<li>gauss law</li>
+ 				<li>electric field</li>
+ 				<li>electric field due to dipole</li>
+ 				<li>potential</li>
+ 				<li>potential differenc</li>
+ 				<li>work done by electric field</li>
+ 				<li>van de graff generator</li>
+ 				
+ </ol>
+   <div id="handel">
+   				<i class="fab fa-instagram a"></i>
+   				<i class="fab fa-twitter a"></i>
+   				<i class="fab fa-youtube a"></i>
+   				<i class="fab fa-facebook a"></i>
+   </div> 
+     
+     
+     
+     
+     
+     
+     
+    <script>        function light()
+        {  document.body.style.backgroundColor = "#001c37";
+        document.getElementsByClassName("kagaz")[0,1].style.backgroundColor="#003e7a";
+            }
+
+
+function op(i){
+				document.getElementsByClassName("sh")[i].style.left="0px";			document.getElementsByClassName("sh")[i].style.transition = ".5s ease-in-out" ;
+				document.getElementsByClassName("clo")[i].style.display="block";
+				
+				}
+
+function hormenu(){
+			
+			
+			
+}
+
+function cl(b)
+
+{		
+
+document.getElementsByClassName("sh")[b].style.left="-380px";		
+document.getElementsByClassName("sh")[b].style.transition = ".5s ease-in-out" ;	
+}
+
+
+
+
+
+        
+        function opennav()
+        {
+            document.getElementById("lin1").style.transform = "rotateZ(-45deg)" ;
+            document.getElementById("lin1").style.transformOrigin = "right " ;
+            document.getElementById("lin1").style.transition = ".35s" ;
+
+document.getElementsByClassName("vertical-menu")[0].style.left = "0";
+document.getElementsByClassName("vertical-menu")[0].style.transition = "1.5s" ;
+
+            document.getElementById("lin2").style.transform = "translateX(500px)" ;
+            document.getElementById("lin2").style.transition = ".1s" ;
+            document.getElementById("lin2").style.backgroundColor = "red" ;
+            document.getElementById("lin2").style.transition = "2s" ;
+            
+
+            document.getElementById("lin3").style.transform = "rotateZ(45deg)" ;
+            document.getElementById("lin3").style.transformOrigin = "right" ;
+            document.getElementById("lin3").style.transition = ".35s" ;
+
+        }
+        function clos(){
+            document.getElementById("lin1").style.transform = "rotateZ(0deg)" ;
+            document.getElementById("lin1").style.transformOrigin = "right " ;
+            document.getElementById("lin1").style.transition = "2.5s" ;
+
+document.getElementsByClassName("vertical-menu")[0].style.left = "-83%";
+document.getElementsByClassName("vertical-menu")[0].style.transition = "1.5s" ;
+
+            document.getElementById("lin2").style.transform = "translateX(0px)" ;
+            document.getElementById("lin2").style.transition = "1s" ;
+            document.getElementById("lin2").style.backgroundColor = "#084763" ;
+            document.getElementById("lin2").style.transition = "1.5s" ;
+            
+
+
+            document.getElementById("lin3").style.transform = "rotateZ(0deg)" ;
+            document.getElementById("lin3").style.transformOrigin = "right" ;
+            document.getElementById("lin3").style.transition = "2.5s" ;
+        }
+        function mysearch()
+        {
+                let m = document.getElementById("search").value;
+               if(m == "optics" || m == "Optics")
+                       {
+                           for(let i = 0; i<=12; i++)
+                                    { 
+                                        if(i!=1)
+                                         document.getElementsByClassName("flashcards")[i].style.display = "none" ;
+                                         else
+                                         document.getElementsByClassName("flashcards")[i].style.display = "block" ;
+
+
+                                    }      
+
+                                }
+                else  if(m == "thermodynamics" || m == "Thermodynamics")
+                       {
+                           for(let i = 0; i<=12; i++)
+                                    { 
+                                        if(i!=12)
+                                         document.getElementsByClassName("flashcards")[i].style.display = "none" ;
+                                          else
+                                          document.getElementsByClassName("flashcards")[i].style.display = "block" ;
+
+
+                                        }      
+
+                        }
+                        else  if(m == "gravity" || m == "Gravity")
+                       {
+                                     for(let i = 0; i<=12; i++)
+                                    { 
+                                        if(i!=0)
+                                         document.getElementsByClassName("flashcards")[i].style.display = "none" ;
+                                          else
+                                         document.getElementsByClassName("flashcards")[i].style.display = "block" ;
+                                         
+
+                                    }      
+
+                        }
+                else{
+                    document.getElementsByClassName("flashcards")[0].innerHTML = "site under construction";
+                    document.getElementsByClassName("flashcards")[0].style.color = "red";
+                }
+                
+            }
+            </script>
+
+<script src="https://kit.fontawesome.com/914dc9d91e.js" crossorigin="anonymous"></script>
+</body>
+</html>
